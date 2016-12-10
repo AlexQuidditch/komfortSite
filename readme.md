@@ -15,7 +15,6 @@
 8. `$ npm i`
 9. `$ bower i`
 10. `$ gulp`
-So U can set   for  or 
 
 Also U can specify `NODE_ENV=dev` in __config.js__ for `dev` and `prod` versions respectively.
 
