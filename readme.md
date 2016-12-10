@@ -10,7 +10,7 @@
 3. Open Git Bash CLI
 4. `$ npm i -g bower`
 5. `$ npm i -g gulp`
-6. `$ cd ../..` _Choose a requared directory for this repo_
+6. `$ cd ../..` _Choose requared directory for this repo_
 7. `$ git clone https://github.com/AlexQuidditch/komfortSite.git`
 8. `$ npm i`
 9. `$ bower i`
