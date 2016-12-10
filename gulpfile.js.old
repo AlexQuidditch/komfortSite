@@ -1,0 +1,231 @@
+'use strict';
+
+const gulp = require('gulp'),
+	handlebars = require('gulp-compile-handlebars'),
+	rename = require('gulp-rename'),
+	glob = require('glob'),
+	filter = require('gulp-filter'),
+	browserSync = require('browser-sync').create(),
+	assets = require('postcss-assets'),
+	concat = require('gulp-concat'),
+	nested = require('postcss-nested'),
+	postcss = require('gulp-postcss'),
+	sass = require('gulp-sass'),
+	autoprefixer = require('autoprefixer'),
+	cssShort = require('postcss-short'),
+	cssnano = require('cssnano'),
+	sourcemaps = require('gulp-sourcemaps'),
+	stylelint = require('stylelint'),
+	uglify = require('gulp-uglify'),
+	gulpIf = require('gulp-if'),
+	useref = require('gulp-useref'),
+	reporter = require('postcss-reporter'),
+	eslint = require('gulp-eslint'),
+	del = require('del'),
+
+	config = require('./config'),
+	rulesStyles = require('./stylelintrc.json'),
+	rulesScripts = require('./eslintrc.json'),
+	templateContext = require('./app/data.json'),
+
+	paths = {
+		appDir: './app',
+		devDir: './dev',
+		buildDir: './build',
+		
+		htmlDev: ['dev/**/*.html', '!app/bower_components/**/*.html', '!app/**/*.html'],
+		
+		templates: './app/handlebars/templates/**/*.hbs',
+		handlebars: ['./app/handlebars/*.hbs'],
+
+		appCss: ['./app/scss/*.scss'],
+		watchSass: ['./app/scss/**/*.scss'],
+		devCss: ['./dev/css'],
+		buildCss: ['./build/css'],
+
+		appJs: ['./app/js/**/*.js'],
+		devJs: ['./dev/js'],
+		buildJs: ['./build/js'],
+
+		scriptsLint: ['**/*.js', '!node_modules/**/*', '!app/bower_components/**/*', '!build/**/*', '!prebuild/**/*'],
+		assets: 'app/assets/**/*.{png,svg,jpg}',
+		contextJson: 'app/data.json'
+	};
+
+switch (config.env) {
+case 'dev':
+	gulp.task('default', [
+            'fontsDev',
+            'scriptsDev',
+            'stylesDev',
+            'compileDev',
+            'cleanDev',
+            'assetsDev',
+            'watch',
+            'browser-sync'
+        ]);
+	break;
+case 'prod':
+	gulp.task('default', [
+            'compileBuild',
+            'stylesBuild',
+            'fontsBuild'
+        ]);
+	break;
+default:
+	break;
+}
+
+gulp.task('browser-sync', () => {
+	browserSync.init({
+		server: {
+			baseDir: './dev'
+		}
+	});
+});
+
+gulp.task('compileDev', () => {
+	glob(paths.templates, (err, files) => {
+		if (!err) {
+			const templatesDir = files.map(item => item.slice(0, item.lastIndexOf('/')));
+			const options = {
+				ignorePartials: true,
+				batch: templatesDir,
+				helpers: {
+					capitals: str => str.toUpperCase()
+				}
+			};
+
+			gulp.src(`${paths.handlebars}`)
+				.pipe(handlebars(templateContext, options))
+				.pipe(rename({
+					extname: ".html"
+				}))
+				.pipe(gulp.dest(`${paths.devDir}`))
+		} else {
+			throw err
+		}
+	});
+});
+
+gulp.task('compileBuild', () => {
+	glob(paths.templates, (err, files) => {
+		if (!err) {
+			const templatesDir = files.map(item => item.slice(0, item.lastIndexOf('/')));
+			const options = {
+				ignorePartials: true,
+				batch: templatesDir,
+				helpers: {
+					capitals: str => str.toUpperCase()
+				}
+			};
+
+			gulp.src(`${paths.handlebars}`)
+				.pipe(handlebars(templateContext, options))
+				.pipe(rename({
+					extname: ".html"
+				}))
+				.pipe(gulp.dest(`${paths.buildDir}`))
+		} else {
+			throw err
+		}
+	});
+});
+
+const processors = [
+    assets,
+    nested,
+    cssShort,
+    autoprefixer({
+		browsers: ['last 5 version'],
+		cascade: false
+	})
+];
+if (config.env === 'prod') {
+	processors.push(cssnano)
+};
+
+const sassOptions = {
+	errLogToConsole: true,
+	outputStyle: 'expanded'
+};
+
+//==================================
+
+gulp.task('stylesDev', () => {
+	gulp.src(paths.appCss)
+		.pipe(sourcemaps.init())
+			.pipe(sass(sassOptions))
+			.pipe(postcss(processors))
+		.pipe(sourcemaps.write('./maps'))
+	.pipe(gulp.dest(`${paths.devCss}`))
+});
+
+gulp.task('stylesBuild', () => {
+	gulp.src(paths.appCss)
+		.pipe(sass(sassOptions))
+		.pipe(postcss(processors))
+	.pipe(gulp.dest(`${paths.buildCss}`))
+});
+
+//==================================
+
+gulp.task('scriptsDev', () => {
+	gulp.src(paths.appJs)
+		.pipe(gulp.dest(`${paths.devJs}`));
+});
+
+// Optimizing CSS and JavaScript
+gulp.task('userefBuild', () => {
+	gulp.src('./build/*.html')
+		.pipe(useref())
+		.pipe(gulpIf('*.js', uglify()))
+		.pipe(gulpIf('*.css', cssnano()))
+	.pipe(gulp.dest('./build'))
+});
+
+//==================================
+
+gulp.task('fontsDev', () => {
+	gulp.src('./app/fonts/**/*')
+		.pipe(filter(['*.woff', '*.woff2']))
+		.pipe(gulp.dest(`${paths.devDir}/fonts`))
+});
+
+gulp.task('fontsBuild', () => {
+	gulp.src('./app/fonts/**/*')
+		.pipe(filter(['*.woff', '*.woff2']))
+		.pipe(gulp.dest(`${paths.buildDir}/fonts`))
+});
+
+//==================================
+
+gulp.task('assetsDev', () => {
+	gulp.src('app/assets/**/*.{png,svg,jpg}')
+	.pipe(gulp.dest(`${paths.devDir}/assets`))
+});
+
+gulp.task('assetsBuild', () => {
+	glob(paths.assets, (err, files) => {
+		if (!err) {
+			gulp.src(files)
+				.pipe(gulp.dest(`${paths.buildDir}/assets`))
+		} else {
+			throw err
+		}
+	})
+});
+
+gulp.task('cleanDev', function () {
+	del.sync(['./dev/**/*', '!./dev/assets/img', '!./dev/assets/img/**/*', '!./dev/bower_components', '!./dev/bower_components/**/*']);
+});
+
+gulp.task('watch', () => {
+	gulp.watch(paths.handlebars, ['compileDev']);
+	gulp.watch(paths.watchSass, ['stylesDev']);
+	gulp.watch(paths.appJs, ['scriptsDev']);
+	gulp.watch(paths.contextJson)
+		.on('change', browserSync.reload);
+	gulp.watch(`${paths.devDir}/**/*`)
+		.on('change', browserSync.reload);
+});

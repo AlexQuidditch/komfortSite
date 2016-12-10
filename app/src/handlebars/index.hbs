@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>Комфорт 124</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	{{> headTags.html }}
+
+	<!--build:css css/index.min.css-->
+	{{> headTags.css }}
+
+	<link rel="stylesheet" href="css/index.css">
+	<!--endbuild-->
+
+</head>
+
+<body>
+
+	<div id="wrapper" class="wrapper">
+
+		{{> header }}
+
+		<main id="main" class="main">
+
+			{{> indexIntro }}
+
+			{{> indexCatalogue }}
+
+			{{> indexAbout }}
+
+		</main>
+
+		{{> footer }}
+
+		{{> topMenu }}
+
+	</div>
+
+	<!--build:js js/index.min.js-->
+	{{> bodyTags.js }}
+
+	<script type="text/javascript" src="js/index.js"></script>
+	<!--endbuild-->
+
+</body>
+
+</html>

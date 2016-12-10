@@ -1,0 +1,27 @@
+{
+  "extends": "airbnb/base",
+  "ecmaFeatures": {
+    "jsx": true,
+    "modules": true
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "jasmine": true,
+    "jest": true
+  },
+  "rules": {
+    "func-names": 0,
+    "quotes": [2, "single"],
+    "strict": [2, "never"],
+    "comma-dangle": 0,
+    "indent": [2, 4, {
+      "SwitchCase": 1
+    }],
+    "id-length": [2, {"min": 2, "properties": "never", "exceptions": ["$", "_", "t"]}],
+    "no-use-before-define": [2, "nofunc"],
+    "no-throw-literal": 0,
+    "no-fallthrough": 1,
+    "camelcase": 0
+  }
+}
