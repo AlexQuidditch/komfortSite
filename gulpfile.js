@@ -46,7 +46,7 @@ var gulp = require('gulp'),
 		appJs: ['./app/js/**/*.js'],
 		buildJs: ['./build/js'],
 
-		scriptsLint: ['**/*.js', '!node_modules/**/*', '!app/bower_components/**/*', '!build/**/*', '!prebuild/**/*'],
+		scriptsLint: ['**/*.js', '!node_modules/**/*', '!app/bower_components/**/*', '!build/**/*'],
 		assets: 'app/assets/**/*.{png,svg,jpg}',
 		others: ['./app/php/*.php']
 		contextJson: 'app/src/data.json'
@@ -132,11 +132,20 @@ gulp.task('compile', function () {
 //==================================
 
 gulp.task('styles', function () {
-	return gulp.src(paths.appScss)
-		.pipe(sass(sassOptions))
-		.pipe(postcss(processors))
-	.pipe(gulp.dest('' + paths.appCss))
-        .pipe(browserSync.stream());
+	if (config.env === 'prod') {
+		return gulp.src(paths.appScss)
+			.pipe(sass())
+			.pipe(postcss(processors))
+		.pipe(gulp.dest('' + paths.appCss))
+	} else {
+		return gulp.src(paths.appScss)
+		.pipe(sourcemaps.init())
+			.pipe(sass(sassOptions))
+			.pipe(postcss(processors))
+		.pipe(sourcemaps.write('maps'))
+		.pipe(gulp.dest('' + paths.appCss))
+			.pipe(browserSync.stream());
+	}
 });
 
 //==================================
