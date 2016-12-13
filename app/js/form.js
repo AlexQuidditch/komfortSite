@@ -8,7 +8,7 @@ $(document).ready(function () {
 		formPhone = $('#formPhone'),
 		formText = $('#formText'),
 
-//		SweetAlert Notifications
+		//		SweetAlert Notifications
 		confirm = {
 			title: 'Секундочку!',
 			text: 'Отправляем данные...',
@@ -29,15 +29,15 @@ $(document).ready(function () {
 			showCloseButton: true
 		};
 
-//	functions callers
+	//	functions callers
 
-	formCall.on('click', modal_opened);
+	formCall.on('click', _modal_opened);
 
-	formOverlay.on('click', modal_close);
+	formOverlay.on('click', _modal_close);
 
-	formSend.on('click', modal_send);
+	formSend.on('click', _modal_send);
 
-// modal open/close	functions
+	// modal open/close	functions
 
 	$(document).keyup(function (e) {
 		if (e.which == '27') {
@@ -46,21 +46,21 @@ $(document).ready(function () {
 		}
 	});
 
-	function modal_close(e) {
+	function _modal_close(e) {
 		e.preventDefault();
 		formOverlay.removeClass('overlay--visible'),
 			formModal.removeClass('modal__window--visible')
 	};
 
-	function modal_opened(e) {
+	function _modal_opened(e) {
 		e.preventDefault();
 		formOverlay.addClass('overlay--visible'),
 			formModal.addClass('modal__window--visible')
 	};
 
-//	form send function
+	//	form send function
 
-	function modal_send() {
+	function _modal_send() {
 		swal(confirm),
 			$.ajax({
 				type: 'POST',

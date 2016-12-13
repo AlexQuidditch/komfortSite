@@ -1,9 +1,9 @@
 $(document).ready(function () {
 
-	$('.intro__slider').flickity({
+	$('#slider').flickity({
 		autoPlay: 10000,
-		prevNextButtons: false,
-		pageDots: false
+		prevNextButtons: true,
+		pageDots: true
 	})
 
 });

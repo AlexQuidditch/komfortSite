@@ -1,22 +1,103 @@
-.layout__body {
-	margin: 0;
-	padding: 0;
-	font: 36px/36px SuisseIntl, Helvetica, sans-serif;
+@import '../../bower_components/bourbon/app/assets/stylesheets/_bourbon';
+@import 'partials/_variables';
+@import 'partials/_layout';
+@import 'partials/_mixins';
+.slider {
+	height: 70vh;
 }
 
-.content {
-	&__in {
-		min-size: 40px;
-		background: #f00;
-	}
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	size: 150px 100px;
+.slide {
 	display: flex;
-	background: #4eba0f;
-	opacity: .5;
-	position: absolute;
-	margin: auto;
+	flex-direction: row;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	&:nth-child(1) {
+		background-image: url('../assets/img/slide-1.jpg');
+	}
+	&:nth-child(2) {
+		background-image: url('../assets/img/slide-2.jpg');
+	}
+	&:nth-child(3) {
+		background-image: url('../assets/img/slide-3.jpg');
+	}
+	&:nth-child(4) {
+		background-image: url('../assets/img/slide-4.jpg');
+	}
+	&:nth-child(5) {
+		background-image: url('../assets/img/slide-5.jpg');
+	}
+	&:nth-child(6) {
+		background-image: url('../assets/img/slide-6.jpg');
+	}
+	&__column_small {
+		flex: 1 0 auto;
+	}
+	&__column_half {
+		flex: 2 0 auto;
+	}
+	&__column_big {
+		flex: 3 0 auto;
+	}
+	&__column_full {
+		flex: 4 0 auto;
+	}
+	&__list {}
+	&__item {}
+}
+
+.carousel-cell-image {
+	display: block;
+	max-height: 100%;
+	margin: 0 auto;
+	max-width: 100%;
+	opacity: 0;
+	background-size: cover;
+	transition: opacity .4s ease-in-out;
+	&.flickity-lazyloaded,
+	&.flickity-lazyerror {
+		opacity: 1;
+	}
+}
+
+.flickity-page-dots {
+	bottom: 2%;
+	.dot {
+		opacity: 0.8;
+		width: 12px;
+		height: 12px;
+		background: transparent;
+		border: 2px solid $red;
+		transition: .4s ease-in-out;
+		&:hover {
+			opacity: 1;
+		}
+		&.is-selected {
+			background: $red;
+			box-shadow: 0 0 5px rgba($red, .5);
+		}
+	}
+}
+
+.flickity-prev-next-button {
+	width: 60px;
+	height: 60px;
+	background: rgba($cloud, 0.5);
+	transition: .4s ease-in-out;
+	&:hover {
+		background: $white;
+	}
+	&:disabled {
+		display: none;
+	}
+	.arrow {
+		fill: $red;
+		transition: .4s ease-in-out;
+	}
+	.no-svg {
+		color: $red;
+		transition: .4s ease-in-out;
+	}
 }

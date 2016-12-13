@@ -4,8 +4,7 @@
 @import '../partials/_mixins';
 
 *, *::before, *::after {
-	box-sizing: border-box;
-	transition: .3s ease-in-out;
+	box-sizing: border-box
 }
 
 html, body, wrapper {
@@ -29,6 +28,10 @@ body {
 	max-width: 1180px;
 	margin: $wrapperTop auto;
 	background-color: rgba($white, .9);
+	box-shadow:
+		0 16px 24px 2px rgba(0,0,0,0.14),
+		0 6px 30px 5px rgba(0,0,0,0.12),
+		0 8px 10px -5px rgba(0,0,0,0.3);
 }
 
 .container {
@@ -48,8 +51,7 @@ body {
 }
 
 .main {
-	z-index: $content-zindex;
-	background: $cloud;
+	z-index: $content-zindex
 }
 
 .main,
@@ -100,6 +102,4 @@ body {
 	line-height: normal;
 }
 
-.waves-effect.waves-light .waves-ripple {
-	background-color: rgba($red, 0.3);
-}
+@include waves-light( $red, $ripple-opacity );

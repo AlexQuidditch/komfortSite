@@ -12,9 +12,10 @@
 5. `$ npm i -g gulp`
 6. `$ cd ../..` _Choose requared directory for this repo_
 7. `$ git clone https://github.com/AlexQuidditch/komfortSite.git`
-8. `$ npm i`
-9. `$ bower i`
-10. `$ gulp`
+8. `$ cd komfortSite`
+9. `$ npm i`
+10. `$ bower i`
+11. `$ gulp`
 
 Also U can specify `NODE_ENV=dev` in __config.js__ for `dev` and `prod` versions respectively.
 

@@ -12,6 +12,7 @@
     "animate.css": "^3.5.2",
     "flickity": "^2.0.5",
     "sweetalert2": "^6.1.1",
-    "normalize-css": "normalize.css#^5.0.0"
+    "normalize-css": "normalize.css#^5.0.0",
+    "Waves": "waves#^0.7.5"
   }
 }

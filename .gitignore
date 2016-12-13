@@ -1,4 +1,7 @@
 /app/bower_components/
+/app/*.html
+/app/css/*.css
+/app/css/maps/*.map
 node_modules/
 build/
 .DS_Store

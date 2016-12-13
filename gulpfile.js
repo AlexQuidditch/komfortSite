@@ -48,7 +48,7 @@ var gulp = require('gulp'),
 
 		scriptsLint: ['**/*.js', '!node_modules/**/*', '!app/bower_components/**/*', '!build/**/*'],
 		assets: 'app/assets/**/*.{png,svg,jpg}',
-		others: ['./app/php/*.php']
+		others: ['./app/php/*.php', './app/js/libs/modernizr.min.js'],
 		contextJson: 'app/src/data.json'
 	},
 
@@ -60,13 +60,14 @@ var gulp = require('gulp'),
 var processors = [
 	assets,
 	nested,
-	cssShort,
-	autoprefixer({
-		browsers: ['last 10 version'],
-		cascade: false
-	})];
+	cssShort];
 if (config.env === 'prod') {
-	processors.push(cssnano)
+	processors.push(
+		cssnano,
+		autoprefixer({
+			browsers: ['last 5 version'],
+			cascade: false
+		}))
 };
 
 switch (config.env) {
@@ -82,7 +83,7 @@ case 'prod':
 	gulp.task('default', function (callback) {
 		runSequence(
 			'clean:build',
-				['compile', 'styles', 'assets', 'fonts'],
+				['compile', 'styles', 'assets', 'fonts', 'copies'],
 			'useref',
 			'clean:app',
 			callback
@@ -183,7 +184,8 @@ gulp.task('assets', function () {
 
 gulp.task('copies', function () {
 	return gulp.src(paths.others)
-	.pipe(gulp.dest('' + paths.buildDir))
+	.pipe(gulpIf('*.js', gulp.dest(paths.buildDir + '/js')))
+	.pipe(gulpIf('*.php', gulp.dest(paths.buildDir + '')))
 })
 
 gulp.task('clean:app', function () {
