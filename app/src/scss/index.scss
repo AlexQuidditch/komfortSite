@@ -14,6 +14,7 @@
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
+
 	&:nth-child(1) {
 		background-image: url('../assets/img/slide-1.jpg');
 	}
@@ -32,20 +33,39 @@
 	&:nth-child(6) {
 		background-image: url('../assets/img/slide-6.jpg');
 	}
+
 	&__column_small {
-		flex: 1 0 auto;
+		flex-basis: percentage(.2);
+		background-color: rgba($red, 0.95)
 	}
 	&__column_half {
-		flex: 2 0 auto;
+		flex-basis: percentage(.5);
 	}
 	&__column_big {
-		flex: 3 0 auto;
+		flex-basis: percentage(.8);
 	}
 	&__column_full {
-		flex: 4 0 auto;
+		flex-basis: 100%;
 	}
-	&__list {}
-	&__item {}
+	&__list {
+	}
+	&__title {
+		display: block;
+		text-align: center;
+		padding: 15px 0;
+		font-size: 24px;
+		color: $white;
+	}
+	&__item {
+		display: block;
+		padding: 10px 30px;
+		color: $white;
+		&:hover {
+			color: $red;
+			background-color: white;
+			@include MDShadow-2;
+		}
+	}
 }
 
 .carousel-cell-image {
@@ -78,26 +98,5 @@
 			background: $red;
 			box-shadow: 0 0 5px rgba($red, .5);
 		}
-	}
-}
-
-.flickity-prev-next-button {
-	width: 60px;
-	height: 60px;
-	background: rgba($cloud, 0.5);
-	transition: .4s ease-in-out;
-	&:hover {
-		background: $white;
-	}
-	&:disabled {
-		display: none;
-	}
-	.arrow {
-		fill: $red;
-		transition: .4s ease-in-out;
-	}
-	.no-svg {
-		color: $red;
-		transition: .4s ease-in-out;
 	}
 }
