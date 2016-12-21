@@ -664,7 +664,7 @@ input[type="search"]::-webkit-search-results-decoration {
 		position: fixed;
 	}
 	@include MQ(L) {
-		width: 76%;
+		width: 65%;
 		height: $search-height-L;
 		top: $wrapperTop;
 		form {
