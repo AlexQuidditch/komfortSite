@@ -73,10 +73,10 @@
 	.waves-effect.waves-dark .waves-ripple {
 		background: rgba($waves-dark-color, $waves-opacity);
 		$gradient:
-			rgba($waves-dark-color, .5) 0,
-			rgba($waves-dark-color, .5) 40%,
-			rgba($waves-dark-color, .5) 50%,
-			rgba($waves-dark-color, .5) 70%,
+			rgba($waves-dark-color, $waves-opacity) 0,
+			rgba($waves-dark-color, $waves-opacity) 40%,
+			rgba($waves-dark-color, $waves-opacity) 50%,
+			rgba($waves-dark-color, $waves-opacity) 70%,
 			rgba($waves-dark-color, 0) 70%;
 		background: radial-gradient($gradient);
 	}
@@ -86,10 +86,10 @@
 	.waves-effect.waves-light .waves-ripple {
 		background: rgba($waves-light-color, $waves-opacity);
 		$gradient:
-			rgba($waves-light-color, 0.5) 0,
-			rgba($waves-light-color, .5) 40%,
-			rgba($waves-light-color, .5) 50%,
-			rgba($waves-light-color, .5) 70%,
+			rgba($waves-light-color, $waves-opacity) 0,
+			rgba($waves-light-color, $waves-opacity) 40%,
+			rgba($waves-light-color, $waves-opacity) 50%,
+			rgba($waves-light-color, $waves-opacity) 70%,
 			rgba($waves-light-color, 0) 70%;
 		background: radial-gradient($gradient);
 	}

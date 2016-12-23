@@ -3,7 +3,7 @@
     "path": {
         "app/**/*.scss": {
             "sass.enabled": false,
-            "linting.collapsed": false,
+            "linting.collapsed": true,
             "livedev.multibrowser": true,
             "fonts.fontSize": "13px"
         }

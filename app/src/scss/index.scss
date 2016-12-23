@@ -9,8 +9,7 @@
 .slide {
 	display: flex;
 	flex-direction: row;
-	width: 100%;
-	height: 100%;
+	size: 100%;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -71,9 +70,8 @@
 
 .carousel-cell-image {
 	display: block;
-	max-height: 100%;
+	max-size: 100%;
 	margin: 0 auto;
-	max-width: 100%;
 	opacity: 0;
 	background-size: cover;
 	transition: opacity .4s ease-in-out;

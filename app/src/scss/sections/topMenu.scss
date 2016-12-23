@@ -265,8 +265,7 @@ input[type="search"]::-webkit-search-results-decoration {
 			left: 20px;
 			top: 50%;
 			margin-top: -20px;
-			width: 40px;
-			height: 40px;
+			size: 40px;
 			background-position: center center;
 			background-repeat: no-repeat;
 			background-size: 40px 40px;
@@ -286,8 +285,7 @@ input[type="search"]::-webkit-search-results-decoration {
 @include MQ(L) {
 	.cd-primary-nav {
 		padding: 0 100px 0 0;
-		height: auto;
-		width: auto;
+		size: auto;
 		float: right;
 		overflow: visible;
 		background: transparent;
@@ -373,10 +371,10 @@ input[type="search"]::-webkit-search-results-decoration {
 				/* reset some inherited style */
 				margin: 0;
 				padding: 0;
+                border: none;
 				a {
 					position: absolute;
-					width: 100%;
-					height: 100%;
+					size: 100%;
 					top: 0;
 					left: 0;
 					font-weight: bold;
@@ -401,12 +399,10 @@ input[type="search"]::-webkit-search-results-decoration {
 				/* change the height according to your needs - you can even set height: auto */
 				height: 400px;
 				/* here you set the number of columns - use width percentage */
-				@include column(.23); // see partials > _layout.scss
-				margin-right: 2.66%;
-				border-right: 1px solid $headerMenu;
+				@include column(.25); // see partials > _layout.scss
+				padding-left: 2%;
+				border-left: 1px solid $headerMenu;
 				overflow: hidden;
-				overflow-x: hidden;
-				overflow-y: auto;
 				-webkit-overflow-scrolling: touch;
 				&:nth-child(4n+2) {
 					/* +2 because we have 2 list items with display:none */
@@ -415,6 +411,7 @@ input[type="search"]::-webkit-search-results-decoration {
 				}
 				> a {
 					/* secondary nav title */
+                    font-size: 1.1rem;
 					color: $headerMenu;
 					font-weight: bold;
 					margin-bottom: .6em;
@@ -439,8 +436,7 @@ input[type="search"]::-webkit-search-results-decoration {
 				position: absolute;
 				top: 0;
 				left: 0;
-				height: 100%;
-				width: 100%;
+				size: 100%;
 				&.is-hidden {
 					transform: translateX(100%);
 				}
@@ -477,8 +473,7 @@ input[type="search"]::-webkit-search-results-decoration {
 				img {
 					position: static;
 					margin-top: 0;
-					height: auto;
-					width: 100%;
+					size: 100% auto;
 					margin-bottom: .6em;
 				}
 				h3 {
@@ -535,7 +530,7 @@ input[type="search"]::-webkit-search-results-decoration {
 		display: inline-block;
 		height: 2px;
 		width: 10px;
-		background: lighten($headerBgSnd, 10%);
+		background: $headerMenu;
 		backface-visibility: hidden;
 	}
 	&::before {
@@ -547,11 +542,11 @@ input[type="search"]::-webkit-search-results-decoration {
 	@include MQ(L) {
 		&::before,
 		&::after {
-			background: darken($headerBgSnd, 10%);
+			background: $headerMenu;
 		}
 		&:hover::before,
 		&:hover::after {
-			background: $headerBgSnd;
+			background: $headerMenuHover;
 		}
 	}
 }
@@ -580,10 +575,11 @@ input[type="search"]::-webkit-search-results-decoration {
 	.has-children > a {
 		&::before,
 		&::after {
-			right: 15%;
+			right: 10%;
 		}
 	}
 	.cd-primary-nav > .has-children > a {
+        $cross-right: 25px;
 		/* main navigation arrows on larger devices */
 		padding-right: 40px !important;
 		&::before,
@@ -595,10 +591,10 @@ input[type="search"]::-webkit-search-results-decoration {
 			transition: width .3s, transform .3s;
 		}
 		&::before {
-			right: 20px;
+			right: $cross-right;
 		}
 		&::after {
-			right: 15px;
+			right: $cross-right - 5px;
 		}
 		&.selected::before,
 		&.selected::after {
@@ -640,8 +636,7 @@ input[type="search"]::-webkit-search-results-decoration {
 	}
 	input {
 		appearance: none;
-		width: 60%;
-		height: 100%;
+		size: 60% 100%;
 		padding: 0 5%;
 		background: $headerBgSnd;
 		border-radius: 0;
