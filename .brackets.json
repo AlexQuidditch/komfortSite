@@ -1,12 +1,11 @@
 {
-	"sass.enabled": false,
-	"path": {
-		"app/**/*.scss": {
-			"sass.enabled": false,
-			"linting.collapsed": true,
-			"brackets-git.gitPath": "git",
-			"livedev.multibrowser": true,
-			"fonts.fontSize": "13px"
-		}
-	}
+    "sass.enabled": true,
+    "path": {
+        "app/**/*.scss": {
+            "sass.enabled": false,
+            "linting.collapsed": false,
+            "livedev.multibrowser": true,
+            "fonts.fontSize": "13px"
+        }
+    }
 }
