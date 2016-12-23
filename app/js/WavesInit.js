@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
 	Waves.init();
-	Waves.attach('[ripple]', ['waves-light']);
+	Waves.attach('[ripple-dark]', ['waves-dark']);
+	Waves.attach('[ripple-light]', ['waves-light']);
 
 });

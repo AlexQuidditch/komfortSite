@@ -60,6 +60,7 @@
 		display: block;
 		padding: 10px 30px;
 		color: $white;
+		@include transition(.2s);
 		&:hover {
 			color: $red;
 			background-color: white;

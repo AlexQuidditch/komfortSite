@@ -1,15 +1,12 @@
 {
-    "sass.enabled": false,
-    "path": {
-        "app/**/*.scss": {
-            "sass.enabled": false,
-            "linting.collapsed": true,
-            "brackets-git.gitPath": "git",
-            "livedev.multibrowser": true,
-            "fonts.fontSize": "12px",
-            "eqFTP.projectsPaths": [
-                "C:/Users/Alex_.ANTONIO-PC/Documents/eqFTP Projects/Test/"
-            ]
-        }
-    }
+	"sass.enabled": false,
+	"path": {
+		"app/**/*.scss": {
+			"sass.enabled": false,
+			"linting.collapsed": true,
+			"brackets-git.gitPath": "git",
+			"livedev.multibrowser": true,
+			"fonts.fontSize": "13px"
+		}
+	}
 }

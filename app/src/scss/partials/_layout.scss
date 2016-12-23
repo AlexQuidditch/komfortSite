@@ -1,7 +1,8 @@
 // breakpoints
 $S: 480px;
 $M: 768px;
-$L: 1024px;
+$L: 1200px;
+
 // media queries
 @mixin MQ($canvas) {
 	@if $canvas==S {
@@ -25,13 +26,4 @@ $L: 1024px;
 @mixin column($percentage, $float-direction:left) {
 	width: 100% * $percentage;
 	float: $float-direction;
-}
-
-@mixin user-select-none {
-	-webkit-tap-highlight-color: transparent;
-	tap-highlight-color: transparent;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none
 }
