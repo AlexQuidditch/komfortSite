@@ -71,15 +71,15 @@ $ripple-opacity: 0.4;
 
 //	Header
 
-$headerBg: #F44336;
-$headerBgSnd: $cloud;
-$headerMenu: #F44336;
-$headerMenuHover: lighten(#F44336, 10%);
-$headerSvg: $cloud;
-$headerSymbs: $cloud;
-$headerSymbsHover: darken($cloud, 10%);
-$headerSearch: $cloud;
-$headerSearcHover: darken($cloud, 10%);
+$headerBg: $red;
+$headerBgSnd: $white;
+$headerMenu: $red;
+$headerMenuHover: lighten($red, 10%);
+$headerSvg: $white;
+$headerSymbs: $white;
+$headerSymbsHover: $white;
+$headerSearch: $white;
+$headerSearcHover: $white;
 
 
 
