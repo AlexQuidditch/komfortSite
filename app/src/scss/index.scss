@@ -2,6 +2,7 @@
 @import 'partials/_variables';
 @import 'partials/_layout';
 @import 'partials/_mixins';
+
 .slider {
 	height: 70vh;
 }
@@ -62,7 +63,7 @@
 		@include transition(.2s);
 		&:hover {
 			color: $red;
-			background-color: white;
+			background-color: $white;
 			@include MDShadow-1;
 		}
 		&:active {
