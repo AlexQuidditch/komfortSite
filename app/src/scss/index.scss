@@ -63,6 +63,9 @@
 		&:hover {
 			color: $red;
 			background-color: white;
+			@include MDShadow-1;
+		}
+		&:active {
 			@include MDShadow-2;
 		}
 	}
@@ -99,3 +102,5 @@
 		}
 	}
 }
+
+@import 'sections/catalogue';
