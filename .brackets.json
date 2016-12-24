@@ -5,7 +5,11 @@
             "sass.enabled": false,
             "linting.collapsed": true,
             "livedev.multibrowser": true,
-            "fonts.fontSize": "13px"
+            "fonts.fontSize": "13px",
+            "brackets-git.gitPath": "git",
+            "eqFTP.projectsPaths": [
+                "C:/Users/Alex_.ANTONIO-PC/Documents/eqFTP Projects/Test/"
+            ]
         }
     }
 }
