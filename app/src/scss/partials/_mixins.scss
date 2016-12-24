@@ -63,15 +63,34 @@
 	cursor: default;
 }
 
-@mixin waves-light($waves-color, $waves-opacity) {
-	.waves-effect.waves-light .waves-ripple {
-		background: rgba($waves-color, $waves-opacity);
+@mixin transition($time) {
+	transition: ($time) ease-in-out;
+}
+
+// making sharper Waves border
+
+@mixin waves-dark($waves-dark-color, $waves-opacity) {
+	.waves-effect.waves-dark .waves-ripple {
+		background: rgba($waves-dark-color, $waves-opacity);
 		$gradient:
-			rgba($waves-color, 0.2) 0,
-			rgba($waves-color, .3) 40%,
-			rgba($waves-color, .4) 50%,
-			rgba($waves-color, .5) 60%,
-			rgba($waves-color, 0) 70%;
+			rgba($waves-dark-color, $waves-opacity) 0,
+			rgba($waves-dark-color, $waves-opacity) 40%,
+			rgba($waves-dark-color, $waves-opacity) 50%,
+			rgba($waves-dark-color, $waves-opacity) 70%,
+			rgba($waves-dark-color, 0) 70%;
+		background: radial-gradient($gradient);
+	}
+}
+
+@mixin waves-light($waves-light-color, $waves-opacity) {
+	.waves-effect.waves-light .waves-ripple {
+		background: rgba($waves-light-color, $waves-opacity);
+		$gradient:
+			rgba($waves-light-color, $waves-opacity) 0,
+			rgba($waves-light-color, $waves-opacity) 40%,
+			rgba($waves-light-color, $waves-opacity) 50%,
+			rgba($waves-light-color, $waves-opacity) 70%,
+			rgba($waves-light-color, 0) 70%;
 		background: radial-gradient($gradient);
 	}
 }

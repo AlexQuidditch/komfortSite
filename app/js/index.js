@@ -1,9 +1,11 @@
 $(document).ready(function () {
 
 	$('#slider').flickity({
-		autoPlay: 10000,
-		prevNextButtons: true,
-		pageDots: true
-	})
+		autoPlay: 7500,
+		pageDots: true,
+		prevNextButtons: false,
+		lazyLoad: true,
+		wrapAround: true
+	});
 
 });

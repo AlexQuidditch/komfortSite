@@ -1,12 +1,12 @@
 {
-    "sass.enabled": false,
+    "sass.enabled": true,
     "path": {
         "app/**/*.scss": {
             "sass.enabled": false,
             "linting.collapsed": true,
-            "brackets-git.gitPath": "git",
             "livedev.multibrowser": true,
             "fonts.fontSize": "13px",
+            "brackets-git.gitPath": "git",
             "eqFTP.projectsPaths": [
                 "C:/Users/Alex_.ANTONIO-PC/Documents/eqFTP Projects/Test/"
             ]
