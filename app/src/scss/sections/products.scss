@@ -1,0 +1,56 @@
+@import '../../../bower_components/bourbon/app/assets/stylesheets/_bourbon';
+@import '../partials/_variables';
+@import '../partials/_layout';
+@import '../partials/_mixins';
+.product {
+    &__container {
+        background-color: $white
+    }
+    &__name {
+        display: block;
+        text-align: center;
+        padding-bottom: 40px;
+    }
+    &__image-container {
+        flex: 1 1 50%;
+        display: flex;
+        justify-content: center;
+    }
+    &__image {
+        size: auto 500px;
+    }
+    &__description-container {
+        flex: 1 1 50%;
+        padding-right: 20px;
+        border: solid #dbdbdb;
+        border-width: 0 0 0 1px;
+    }
+    &__characteristics-list {
+        margin-top: 10px;
+        margin-left: 30px;
+        margin-bottom: 10px;
+    }
+    &__characteristics-title {
+        display: block;
+        padding: 10px 20px;
+        font-size: 16px;
+        line-height: 2;
+        background-color: darken($white, 5%);
+    }
+    &__characteristics-item {
+        font-size: 14px;
+        line-height: 1.5;
+        list-style-type: disc !important;
+    }
+    &__description-text {
+        display: block;
+        margin-top: 10px;
+        margin-left: 30px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        line-height: 1.3;
+    }
+    &__table-container {
+        margin: 25px auto;
+    }
+}
