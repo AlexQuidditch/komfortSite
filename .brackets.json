@@ -3,7 +3,7 @@
     "path": {
         "app/**/*.scss": {
             "sass.enabled": false,
-            "linting.collapsed": true,
+            "linting.collapsed": false,
             "livedev.multibrowser": true,
             "fonts.fontSize": "13px",
             "brackets-git.gitPath": "git",
