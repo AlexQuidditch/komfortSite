@@ -33,6 +33,11 @@ $border-color: #dbdbdb;
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
+        &_half {
+            @extend .product__image;
+            max-width: 100%;
+            height: auto
+        }
     }
     &__image_wide {
         width: 100%;
@@ -119,6 +124,10 @@ $border-color: #dbdbdb;
     }
     &__table-container {
         margin: 25px auto;
+    }
+    &__price {
+        font-size: 2rem;
+        margin: 50px auto;
     }
 }
 
