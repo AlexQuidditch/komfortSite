@@ -1,10 +1,12 @@
-$(document).ready(function () {
-    $('a[href^="#"]').click(function () {
-        var elementClick = $(this).attr("href"),
-            destination = $(elementClick).offset().top;
-        $('html,body').animate({
-            scrollTop: destination
+(function () {
+    $('[data-roll]').on('click', function (e) {
+        e.preventDefault();
+        var
+            $this = $(this),
+            target = $this.data('roll'),
+            anchor = $('[id="' + target + '"]');
+        $('html, body').animate({
+            scrollTop: anchor.offset().top
         }, 750);
-        return false;
     });
-});
+})();
