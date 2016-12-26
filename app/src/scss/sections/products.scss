@@ -2,7 +2,10 @@
 @import '../partials/_variables';
 @import '../partials/_layout';
 @import '../partials/_mixins';
+
 $height: 500px;
+$border-color: #dbdbdb;
+
 .product {
     &__container {
         background-color: $white
@@ -36,9 +39,9 @@ $height: 500px;
     }
     &__description-container {
         flex: 1 1 50%;
-        height: $height;
+        min-height: $height;
         padding-right: 40px;
-        border: solid #dbdbdb;
+        border: solid $border-color;
         border-width: 0 0 0 1px;
     }
     &__characteristics-list {
@@ -77,7 +80,7 @@ $height: 500px;
         font-size: 1.2rem;
         line-height: 1.5;
         background-color: darken($white, 5%);
-        border: solid #dbdbdb;
+        border: solid $border-color;
         border-width: 0 0 1px;
     }
     &__description-text {
