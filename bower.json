@@ -13,6 +13,7 @@
     "flickity": "^2.0.5",
     "sweetalert2": "^6.1.1",
     "normalize-css": "normalize.css#^5.0.0",
-    "Waves": "waves#^0.7.5"
+    "Waves": "waves#^0.7.5",
+    "jquery-mobile-bower": "^1.4.5"
   }
 }
