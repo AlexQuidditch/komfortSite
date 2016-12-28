@@ -131,6 +131,12 @@ $border-color: #dbdbdb;
     &__price {
         font-size: 2rem;
         margin: 50px auto;
+        &_wide {
+            @extend .product__price;
+            flex: 1 1 100%;
+            text-align: center;
+            margin: 20px auto;
+        }
     }
 }
 
