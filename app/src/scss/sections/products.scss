@@ -14,18 +14,20 @@ $border-color: #dbdbdb;
         display: block;
         text-align: center;
         padding: 10px 0 5px;
-        margin: 10px 350px 35px;
+        margin: 10px 200px 35px;
         border: solid $blacked;
         border-width: 0 0 2px;
     }
     &__image-container {
         flex: 1 1 50%;
         display: flex;
+        max-width: 50%;
         justify-content: center;
     }
     &__slider-container {
         flex: 1 1 50%;
         display: block;
+        max-width: 50%;
         height: $height;
     }
     &__image {
@@ -49,6 +51,7 @@ $border-color: #dbdbdb;
         border: solid $border-color;
         border-width: 0 0 0 1px;
     }
+
     &__characteristics-list {
         margin-top: 10px;
         margin-left: 30px;
