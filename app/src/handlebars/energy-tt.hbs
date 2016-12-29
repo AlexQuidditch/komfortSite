@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Энергия-ТТ || Комфорт 124</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    {{> headTags.html }}
+
+    <!--build:css css/energy-tt.min.css-->
+    {{> headTags.css }}
+
+    <link rel="stylesheet" href="css/energy-tt.css">
+    <!--endbuild-->
+
+</head>
+
+<body>
+
+    <div id="wrapper" class="wrapper">
+
+        {{> header }}
+
+        <main id="main" class="main">
+
+       {{> enerIntro }}
+
+       {{> energy-tt }}
+
+       <div class="s-devider"><div class="line"></div></div>
+
+        <div class="families">
+
+           <span class="families__list-title">Другие семейства твёрдотопливных котлов:</span>
+            <ul class="families__list">
+                <li><a href="kentatsu.html" class="families__link" ripple-light>Kentatsu Furst Vulkan</a></li>
+                <li><a href="termokraft.html" class="families__link" ripple-light>Termokraft</a></li>
+                <li><a href="buderus.html" class="families__link" ripple-light>Buderus</a></li>
+                <li><a href="zota.html" class="families__link" ripple-light>Zota</a></li>
+                <li><a href="nmk.html" class="families__link" ripple-light>НМК</a></li>
+            </ul>
+
+        </div>
+
+        </main>
+
+        {{> footer }}
+
+        {{> topMenu }}
+
+    </div>
+    
+    {{> buttonUp }}
+    
+    {{> preloader }}
+
+    <!--build:js js/energy-tt.min.js-->
+    {{> bodyTags.js }}
+
+    <script type="text/javascript" src="js/energy.js"></script>
+    <!--endbuild-->
+
+</body>
+
+</html>
