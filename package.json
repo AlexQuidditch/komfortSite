@@ -4,8 +4,8 @@
 	"description": "",
 	"main": "gulpfile.js",
 	"pre-push": [
-    "prepush"
-  ],
+		"prepush"
+	],
 	"scripts": {
 		"postinstall": "gulp",
 		"prepush": "gulp lint"
