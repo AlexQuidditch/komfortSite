@@ -1,13 +1,12 @@
 var zooming = new Zooming({
-    defaultZoomable: 'img[class="product__image"]',
-    enableGrab: true,
+    enableGrab: false,
     preloadImage: true,
     transitionDuration: 0.5,
     transitionTimingFunction: 'cubic-bezier(0.4, 0, 0, 1)',
     bgColor: 'white',
     bgOpacity: 1,
-    scaleBase: 0.1,
-    scaleExtra: 0.1,
+    scaleBase: 0.2,
+    scaleExtra: 0.2,
     scrollThreshold: 40,
     customSize: null,
     onOpen: null,
@@ -20,4 +19,4 @@ var zooming = new Zooming({
     onBeforeRelease: null
 });
 
-zooming.listen('.product__image')
+zooming.listen('.product__image-container .product__image')
