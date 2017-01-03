@@ -4,6 +4,7 @@
 @import '../partials/_mixins';
 $height: 500px;
 $border-color: #dbdbdb;
+
 .product {
     &__container {
         background-color: $white
@@ -33,6 +34,7 @@ $border-color: #dbdbdb;
     &__title {
         display: block;
         text-align: center;
+        width: 100%;
         padding: 10px;
         font-size: 1.5rem;
         color: $white lighten($red, 5%);
