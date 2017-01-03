@@ -2,6 +2,7 @@
 @import '../partials/_variables';
 @import '../partials/_layout';
 @import '../partials/_mixins';
+
 html,
 body,
 wrapper {
@@ -147,14 +148,13 @@ body {
     cursor: pointer;
     border-radius: 2px;
     @include MDShadow-1;
-    animation-direction: alternate;
     transform: translateX(-200%);
     transition: .3s ease-in-out, transform .6s ease-in-out .3s;
     &.is-visible {
         transform: translateX(0);
     }
     &:hover {
-        color: $white lighten($red, 10%);
+        background-color: lighten($red, 10%);
     }
     &:active {
         @include MDShadow-2;
@@ -167,5 +167,5 @@ body {
     line-height: normal;
 }
 
-@include waves-light( $white, $ripple-opacity);
-@include waves-dark( $red, $ripple-opacity);
+@include waves-light( $white, $ripple-opacity );
+@include waves-dark( $red, $ripple-opacity );
