@@ -34,6 +34,11 @@ $(document).ready(function ($) {
 	//open (or close) submenu items in the lateral menu. Close all the other open submenu items.
 	$subchildrenTrigger.on('click', function (e) {
 		e.preventDefault();
-		$(this).toggleClass('submenu-open').next('.nav__sub').slideToggle(200).end().parent('.nav__sub-trigger').children('a').removeClass('submenu-open').next('.nav__sub').slideUp(1000);
+		$(this).toggleClass('submenu-open')
+            .next('.nav__sub').slideToggle(200)
+            .end()
+            .parent('.nav__sub-trigger')
+            .children('a').removeClass('submenu-open')
+            .next('.nav__sub').slideUp(1000);
 	});
 });
