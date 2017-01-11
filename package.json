@@ -26,6 +26,7 @@
         "gulp-sourcemaps": "latest",
         "gulp-uglify": "latest",
         "gulp-useref": "latest",
+        "object-fit-images": "^3.0.1",
         "postcss-assets": "latest",
         "postcss-nested": "latest",
         "postcss-reporter": "latest",
