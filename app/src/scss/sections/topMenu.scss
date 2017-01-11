@@ -324,7 +324,7 @@ input[type="search"]::-webkit-search-results-decoration {
 			padding: 0 30px;
 			color: $headerSymbs;
 			border-bottom: none;
-			transition: ncolor .3s, box-shadow .3s;
+			transition: color .3s, box-shadow .3s;
 			&:hover {
 				color: $headerSymbsHover;
 			}
