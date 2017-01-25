@@ -1,22 +1,28 @@
 {
-    "name": "komfort124",
+    "name": "komfortSite",
     "version": "1.0.0",
-    "description": "",
     "main": "gulpfile.js",
+    "repository": "https://github.com/AlexQuidditch/komfortSite.git",
+    "author": "AlexQuidditch <alexquidditch@gmail.com>",
+    "pre-push": [
+        "prepush"
+    ],
     "scripts": {
-        "postinstall": "gulp"
+        "postinstall": ["bower install" , "gulp"]
     },
-    "author": "",
-    "license": "ISC",
     "dependencies": {
         "autoprefixer": "latest",
         "browser-sync": "latest",
         "cssnano": "latest",
         "del": "latest",
+        "dev-ip": "latest",
+        "eslint": "latest",
+        "eslint-config-airbnb": "latest",
         "glob": "latest",
         "gulp": "latest",
         "gulp-compile-handlebars": "latest",
         "gulp-concat": "latest",
+        "gulp-eslint": "latest",
         "gulp-filter": "latest",
         "gulp-if": "latest",
         "gulp-plumber": "latest",
@@ -24,13 +30,14 @@
         "gulp-rename": "latest",
         "gulp-sass": "latest",
         "gulp-sourcemaps": "latest",
+        "gulp-stylelint": "latest",
         "gulp-uglify": "latest",
         "gulp-useref": "latest",
-        "object-fit-images": "^3.0.1",
         "postcss-assets": "latest",
         "postcss-nested": "latest",
         "postcss-reporter": "latest",
         "postcss-short": "latest",
+        "pre-push": "latest",
         "run-sequence": "latest"
     }
 }
