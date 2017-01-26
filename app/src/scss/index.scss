@@ -3,6 +3,10 @@
 @import 'partials/_layout';
 @import 'partials/_mixins';
 
+.intro {
+    @include MDShadow-1
+}
+
 .slider {
     height: 70vh;
 }
@@ -143,7 +147,7 @@
         text-align: center;
         font-size: 5rem;
         color: $red;
-        cursor: default; 
+        cursor: default;
     }
 
     &__description {
