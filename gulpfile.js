@@ -65,7 +65,8 @@ if (config.env === 'prod') {
 		autoprefixer({
 			browsers: ['last 5 version'],
 			cascade: false
-		}))
+		})
+    )
 };
 
 switch (config.env) {
@@ -173,7 +174,7 @@ gulp.task('assets', function () {
 	glob(paths.assets, function (err, files) {
 		if (!err) {
 			gulp.src(files)
-				.pipe(gulp.dest(paths.buildDir + '/assets'));
+				.pipe(gulp.dest(paths.buildDir + '/assets/**/*'));
 		} else {
 			throw err;
 		}
