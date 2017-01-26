@@ -1,16 +1,12 @@
-$(document).ready(function () {
-
-	var anchorTrigger = $('[data-roll]');
-
-	anchorTrigger.on('click', function (event) {
-		event.preventDefault();
-		var
-			$this = $(this),
-			target = $this.data('roll'),
-			anchor = $('[id="' + target + '"]');
-		anchor.velocity("scroll", {
-			easing: 'easeInOut',
-			duration: 1500
-		})
-	});
-});
+(function () {
+    $('[data-roll]').on('click', function (e) {
+        e.preventDefault();
+        var
+            $this = $(this),
+            target = $this.data('roll'),
+            anchor = $('[id="' + target + '"]');
+        $('html, body').animate({
+            scrollTop: anchor.offset().top
+        }, 750);
+    });
+})();
