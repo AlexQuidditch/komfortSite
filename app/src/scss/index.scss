@@ -14,7 +14,6 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-
     @each $numder in 1, 2, 3, 4, 5, 6 {
         &:nth-child(#{$numder}) {
             background-image: url('../assets/img/slide-#{$numder}.jpg');
@@ -102,3 +101,56 @@
     }
 }
 @import 'sections/catalogue';
+
+.about {
+    &__title {
+        text-align: center;
+        font-size: 3rem;
+    }
+
+    &__grid {
+        display: flex;
+        flex-flow: row wrap;
+        align-content: flex-start;
+        justify-content: center;
+        width: 100%;
+        padding: 30px;
+    }
+
+    &__cell {
+        flex: 1 1 30%;
+        display: flex;
+        flex-flow: column wrap;
+	    height: 300px;
+        margin: 1vh;
+        padding: 10px 20px;
+        background-color: $white;
+        @include MDShadow-1;
+        @include transition(.3s)
+    }
+
+    &__headline {
+        flex: 1 1 2rem;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: flex-start;
+        padding: 1rem 0;
+        text-align: center;
+        font-size: 1.3rem;
+    }
+
+    &__icon {
+        text-align: center;
+        font-size: 5rem;
+        color: $red;
+        cursor: default; 
+    }
+
+    &__description {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+}
