@@ -4,8 +4,7 @@
 @import '../partials/_mixins';
 
 html,
-body,
-wrapper {
+body {
     width: 100%;
     padding: 0;
     margin: 0;
@@ -23,7 +22,7 @@ body {
 .wrapper {
     max-width: 1180px;
     margin: $wrapperTop auto;
-    background-color: rgba($white, .95);
+    background-color: $white;
     @include MDShadow-3
 }
 
