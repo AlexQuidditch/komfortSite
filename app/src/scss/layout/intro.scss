@@ -2,24 +2,26 @@
 @import '../partials/_variables';
 @import '../partials/_layout';
 @import '../partials/_mixins';
+
 .intro {
     position: relative;
     &__back-image-container {
+        overflow: hidden;
         top: 0;
         left: 0;
         display: block;
-        height: 787px;
+        height: 70vh;
         @include MDShadow-2;
     }
     &__back-image {
         width: 100%;
     }
     &__overlay {
+        display: block;
         position: absolute;
         top: 0;
         left: 0;
-        display: block;
-        height: 100%;
+        size: 100%;
         padding: 0 60px;
         background-color: rgba($blacked, .6);
     }
@@ -30,6 +32,7 @@
         color: $white;
     }
     &__subtitle {
+        text-align: center;
         margin: 20px auto;
         color: $white;
     }

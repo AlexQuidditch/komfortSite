@@ -1,20 +1,21 @@
-$(document).ready(function () {
+var buttonUp = document.getElementById('buttonUp');
 
+window.onscroll = function() {
+    var scrollValue = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollValue >= '700') {
+        buttonUp.classList.add('is-visible')
+    } else {
+        buttonUp.classList.remove('is-visible')
+    }
+};
+
+$(document).ready(function() {
     var buttonUp = $('#buttonUp');
-
-    //	Button Up
-
-    $('body').scroll(function () {
-        if ($(this).scrollTop() > 700) {
-            buttonUp.addClass('is-visible')
-        } else {
-            buttonUp.removeClass('is-visible')
-        }
-    });
-    buttonUp.click(function () {
-        $('body,html').animate({
+    buttonUp.on('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        $('html, body').animate({
             scrollTop: 0
-        }, 750);
-        return false
+        }, 750)
     })
 });

@@ -5,9 +5,8 @@
 
     <meta charset="utf-8">
     <title>Kentatsu Furst || Комфорт 124</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    {{> headTags.html }}
+    <meta name="description" content="На этой странице представлены твёрдотопливные котлы семейства Kentatsu, которые можно приобрести в ООО Комфорт в г. Ачинске">
+    <meta name="keywords" content="Kentatsu, Kentatsu Furst Elegant, Kentatsu Furst Vulkan Max PR (PE), Kentatsu Furst Vulkan PR (PE), Kentatsu Furst Vulkan SR, кентатсу элегант, кентатсу вулкан, купить, котёл в Ачинске, твёрдотопливные котлы,"> {{> headTags.html }}
 
     <!--build:css css/index.min.css-->
     {{> headTags.css }}
@@ -20,54 +19,52 @@
 <body>
 
     <div id="wrapper" class="wrapper">
-        
+
         {{> header }}
 
         <main id="main" class="main">
 
-       {{> kentIntro }}
+            {{> kentIntro }} {{> Elegant }}
 
-       {{> Elegant }}
-       
-       <div class="s-devider"><div class="line"></div></div>
+            <div class="s-devider"><div class="line"></div></div>
 
-       {{> SR }}
+            {{> SR }}
 
-       <div class="s-devider"><div class="line"></div></div>
+            <div class="s-devider"><div class="line"></div></div>
 
-       {{> PR }}
+            {{> PR }}
 
-       <div class="s-devider"><div class="line"></div></div>
+            <div class="s-devider"><div class="line"></div></div>
 
-       {{> mPR }}
+            {{> mPR }}
 
-       <div class="s-devider"><div class="line"></div></div>
+            <div class="s-devider"><div class="line"></div></div>
 
-        <div class="families">
+            <div class="families">
 
-           <span class="families__list-title">Другие семейства твёрдотопливных котлов:</span>
-            <ul class="families__list">
-                <li><a href="#" class="families__link" ripple-light>Termokraft</a></li>
-                <li><a href="#" class="families__link" ripple-light>Buderus</a></li>
-                <li><a href="#" class="families__link" ripple-light>Zota</a></li>
-                <li><a href="#" class="families__link" ripple-light>НМК</a></li>
-                <li><a href="#" class="families__link" ripple-light>Энергия-ТТ</a></li>
-            </ul>
+                <span class="families__list-title">Другие семейства твёрдотопливных котлов:</span>
+                <ul class="families__list">
+                    <li><a href="termokraft.html" class="families__link" ripple-light>Termokraft</a></li>
+                    <li><a href="buderus.html" class="families__link" ripple-light>Buderus</a></li>
+                    <li><a href="zota.html" class="families__link" ripple-light>Zota</a></li>
+                    <li><a href="nmk.html" class="families__link" ripple-light>НМК</a></li>
+                    <li><a href="energy-tt.html" class="families__link" ripple-light>Энергия-ТТ</a></li>
+                </ul>
 
-        </div>
+            </div>
 
         </main>
 
-        {{> footer }}
-
-        {{> topMenu }}
+        {{> footer }} {{> topMenu }}
 
     </div>
+
+    {{> buttonUp }} {{> preloader }}
 
     <!--build:js js/index.min.js-->
     {{> bodyTags.js }}
 
-<!--    <script type="text/javascript" src="js/index.js"></script>-->
+    <script type="text/javascript" src="js/kentatsu.js"></script>
     <!--endbuild-->
 
 </body>

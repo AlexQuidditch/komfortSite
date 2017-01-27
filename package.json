@@ -1,45 +1,43 @@
 {
-	"name": "komfort124",
-	"version": "1.0.0",
-	"description": "",
-	"main": "gulpfile.js",
-	"pre-push": [
-    "prepush"
-  ],
-	"scripts": {
-		"postinstall": "gulp",
-		"prepush": "gulp lint"
-	},
-	"author": "",
-	"license": "ISC",
-	"devDependencies": {
-		"autoprefixer": "^6.6.0",
-		"browser-sync": "^2.18.5",
-		"cssnano": "^3.9.1",
-		"del": "^2.2.2",
-		"dev-ip": "^1.0.1",
-		"eslint": "^3.12.2",
-		"eslint-config-airbnb": "^13.0.0",
-		"glob": "^7.1.1",
-		"gulp": "^3.9.1",
-		"gulp-compile-handlebars": "^0.6.1",
-		"gulp-concat": "^2.6.1",
-		"gulp-eslint": "^3.0.1",
-		"gulp-filter": "^4.0.0",
-		"gulp-if": "^2.0.2",
-		"gulp-plumber": "^1.1.0",
-		"gulp-postcss": "^6.2.0",
-		"gulp-rename": "^1.2.2",
-		"gulp-sass": "^3.0.0",
-		"gulp-sourcemaps": "^1.9.1",
-		"gulp-stylelint": "^3.7.0",
-		"gulp-uglify": "^2.0.0",
-		"gulp-useref": "^3.1.2",
-		"postcss-assets": "^4.1.0",
-		"postcss-nested": "^1.0.0",
-		"postcss-reporter": "^3.0.0",
-		"postcss-short": "^3.0.1",
-		"pre-push": "^0.1.1",
-		"run-sequence": "^1.2.2"
-	}
+    "name": "komfortSite",
+    "version": "1.0.0",
+    "main": "gulpfile.js",
+    "repository": "https://github.com/AlexQuidditch/komfortSite.git",
+    "author": "AlexQuidditch <alexquidditch@gmail.com>",
+    "pre-push": [
+        "prepush"
+    ],
+    "scripts": {
+        "postinstall": ["bower install" , "gulp"]
+    },
+    "dependencies": {
+        "autoprefixer": "latest",
+        "browser-sync": "latest",
+        "cssnano": "latest",
+        "del": "latest",
+        "dev-ip": "latest",
+        "eslint": "latest",
+        "eslint-config-airbnb": "latest",
+        "glob": "latest",
+        "gulp": "latest",
+        "gulp-compile-handlebars": "latest",
+        "gulp-concat": "latest",
+        "gulp-eslint": "latest",
+        "gulp-filter": "latest",
+        "gulp-if": "latest",
+        "gulp-plumber": "latest",
+        "gulp-postcss": "latest",
+        "gulp-rename": "latest",
+        "gulp-sass": "latest",
+        "gulp-sourcemaps": "latest",
+        "gulp-stylelint": "latest",
+        "gulp-uglify": "latest",
+        "gulp-useref": "latest",
+        "postcss-assets": "latest",
+        "postcss-nested": "latest",
+        "postcss-reporter": "latest",
+        "postcss-short": "latest",
+        "pre-push": "latest",
+        "run-sequence": "latest"
+    }
 }

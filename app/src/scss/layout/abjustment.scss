@@ -2,12 +2,10 @@
 @import '../partials/_variables';
 @import '../partials/_layout';
 @import '../partials/_mixins';
+
 html,
-body,
-wrapper {
+body {
     width: 100%;
-    height: 100%;
-    overflow-x: hidden;
     padding: 0;
     margin: 0;
     &.is-opened {
@@ -24,8 +22,8 @@ body {
 .wrapper {
     max-width: 1180px;
     margin: $wrapperTop auto;
-    background-color: rgba($white, .95);
-    @include MDShadow-3
+    background-color: $white;
+    @include MDShadow-2
 }
 
 .container {
@@ -45,20 +43,10 @@ body {
     }
 }
 
-.main {
-    z-index: $content-zindex
-}
-
-.main,
-.header {
-    /* Force Hardware Acceleration in WebKit */
-    transform: translateZ(0);
-    will-change: transform;
-}
-
 .main,
 .header {
     position: relative;
+    transform: translateZ(0);
     transition: transform .3s;
     @include MQ(maxL) {
         &.nav-is-visible {
@@ -84,20 +72,20 @@ body {
 .overlay {
     width: 100%;
     height: 100%;
-    background: rgba($white, 0.2);
+    background-color: rgba($white, 0.2);
 }
 
 .modal__overlay {
+    opacity: 0;
+    visibility: hidden;
     z-index: $modal-zindex;
     position: fixed;
     display: flex;
     top: 0;
     left: 0;
-    opacity: 0;
-    visibility: hidden;
     width: 100%;
     height: 100%;
-    background: rgba($blacked, 0.3);
+    background-color: rgba($blacked, 0.3);
     &.is-opened {
         opacity: 1;
         visibility: visible;
@@ -140,22 +128,20 @@ body {
     position: fixed;
     left: 0px;
     bottom: 0px;
-    padding: 20px;
+    padding: 10px;
     margin: $wrapperTop;
     text-align: center;
-    font-size: 16px;
-    color: $white $red;
+    background-color: $red;
     cursor: pointer;
     border-radius: 2px;
     @include MDShadow-1;
-    animation-direction: alternate;
     transform: translateX(-200%);
-    transition: .3s ease-in-out, transform .6s ease-in-out .3s;
+    transition: .3s ease-in-out, transform .6s ease-in-out .2s;
     &.is-visible {
         transform: translateX(0);
     }
     &:hover {
-        color: $white lighten($red, 10%);
+        background-color: lighten($red, 10%);
     }
     &:active {
         @include MDShadow-2;
@@ -168,5 +154,5 @@ body {
     line-height: normal;
 }
 
-@include waves-light( $white, $ripple-opacity);
-@include waves-dark( $red, $ripple-opacity);
+@include waves-light( $white, $ripple-opacity );
+@include waves-dark( $red, $ripple-opacity );
