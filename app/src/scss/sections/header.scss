@@ -18,7 +18,7 @@
 	@include MQ(L) {
 		height: $header-height-L;
 		@include clearfix;
-		@include MDShadow-2;
+		@include MDShadow-1;
 	}
 }
 

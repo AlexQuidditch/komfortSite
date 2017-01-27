@@ -3,13 +3,81 @@
     "path": {
         "app/**/*.scss": {
             "sass.enabled": false,
-            "linting.collapsed": false,
+            "linting.collapsed": true,
             "livedev.multibrowser": true,
             "fonts.fontSize": "13px",
             "brackets-git.gitPath": "git",
             "eqFTP.projectsPaths": [
                 "C:/Users/Alex_.ANTONIO-PC/Documents/eqFTP Projects/Test/"
-            ]
+            ],
+            "WakaTime.ignore": [
+                "^/tmp/",
+                "^/private/"
+            ],
+            "WakaTime.apikey": "701cd8bd-8390-41f1-9501-8464f0193625",
+            "brackets-git.bashShortcut": "",
+            "brackets-git.commitAllShortcut": "",
+            "brackets-git.commitCurrentShortcut": "",
+            "brackets-git.dateFormat": "",
+            "brackets-git.gotoNextChangeShortcut": "",
+            "brackets-git.gotoPrevChangeShortcut": "",
+            "brackets-git.pullShortcut": "",
+            "brackets-git.pushShortcut": "",
+            "brackets-git.refreshShortcut": "",
+            "brackets-icons.icons": {},
+            "closeTags": {
+                "dontCloseTags": [],
+                "indentTags": [],
+                "whenClosing": true,
+                "whenOpening": true
+            },
+            "eqFTP.modalWindowParams": {
+                "scrollTop": 0,
+                "width": 300,
+                "height": 600,
+                "allowHiding": true,
+                "columns": {
+                    "name": "45%",
+                    "size": "18.3%",
+                    "type": "18.3%",
+                    "modified": "18.3%"
+                }
+            },
+            "jscodehints.detectedExclusions": [],
+            "jslint.options": {
+                "ass": false,
+                "bitwise": false,
+                "browser": false,
+                "closure": false,
+                "continue": false,
+                "couch": false,
+                "debug": false,
+                "devel": false,
+                "eqeq": false,
+                "es6": false,
+                "evil": false,
+                "forin": false,
+                "indent": null,
+                "maxerr": null,
+                "maxlen": null,
+                "newcap": false,
+                "node": false,
+                "nomen": false,
+                "passfail": false,
+                "plusplus": false,
+                "regexp": false,
+                "rhino": false,
+                "sloppy": false,
+                "stupid": false,
+                "sub": false,
+                "todo": false,
+                "unparam": false,
+                "vars": false,
+                "white": false
+            },
+            "language.fileExtensions": {},
+            "language.fileNames": {},
+            "linting.prefer": []
         }
     }
 }

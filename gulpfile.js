@@ -15,14 +15,12 @@ var gulp = require('gulp'),
 	cssShort = require('postcss-short'),
 	cssnano = require('cssnano'),
 	sourcemaps = require('gulp-sourcemaps'),
-	stylelint = require('stylelint'),
 	uglify = require('gulp-uglify'),
 	gulpIf = require('gulp-if'),
 	useref = require('gulp-useref'),
 	plumber = require('gulp-plumber'),
 	runSequence = require('run-sequence'),
 	reporter = require('postcss-reporter'),
-	eslint = require('gulp-eslint'),
 	del = require('del'),
 	config = require('./config'),
 	rulesStyles = require('./stylelintrc.json'),
@@ -67,7 +65,8 @@ if (config.env === 'prod') {
 		autoprefixer({
 			browsers: ['last 5 version'],
 			cascade: false
-		}))
+		})
+    )
 };
 
 switch (config.env) {
@@ -175,7 +174,7 @@ gulp.task('assets', function () {
 	glob(paths.assets, function (err, files) {
 		if (!err) {
 			gulp.src(files)
-				.pipe(gulp.dest(paths.buildDir + '/assets'));
+				.pipe(gulp.dest(paths.buildDir + '/assets/**/*'));
 		} else {
 			throw err;
 		}

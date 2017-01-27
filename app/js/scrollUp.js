@@ -1,37 +1,21 @@
-$(document).ready(function () {
+var buttonUp = document.getElementById('buttonUp');
 
-	var buttonUp = $('.button-up');
+window.onscroll = function() {
+    var scrollValue = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollValue >= '700') {
+        buttonUp.classList.add('is-visible')
+    } else {
+        buttonUp.classList.remove('is-visible')
+    }
+};
 
-	$('body').append(
-		'<div class="button-up" style="z-index:1000;display: none;opacity: 0.5;width: 10%;height:100%; position: fixed; left: 0px; top: 0px; cursor: pointer; text-align: center; font-size:16px; line-height: 175vh; color: #45688E;"><i class="fa fa-arrow-circle-up fa-4x"></i>&nbsp;</div>'
-	);
-	$(window).scroll(function () {
-		if ($(this).scrollTop() > 700) {
-			buttonUp.fadeIn();
-		} else {
-			buttonUp.fadeOut();
-		}
-	});
-	buttonUp.click(function () {
-		$('body,html').velocity({
-			scrollTop: 0
-		}, 750);
-		return false;
-	});
-	buttonUp.hover(function () {
-		$(this).velocity({
-			'opacity': '0.9'
-		}).css({
-			'background-color': '#E1E7ED',
-			'color': '#45688E',
-		});
-	}, function () {
-		$(this).velocity({
-			'opacity': '0.4'
-		}).css({
-			'background': 'none',
-			'color': '#45688E',
-		});
-	});
-
-})
+$(document).ready(function() {
+    var buttonUp = $('#buttonUp');
+    buttonUp.on('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        $('html, body').animate({
+            scrollTop: 0
+        }, 750)
+    })
+});
