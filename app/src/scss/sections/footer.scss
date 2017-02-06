@@ -2,12 +2,15 @@
 @import '../partials/_variables';
 @import '../partials/_layout';
 @import '../partials/_mixins';
+
 .footer {
     padding: 30px 40px;
     background-color: $red;
+
     &__column {
-        flex: 1 2 60%
+        flex: 1 2 60%;
     }
+
     &__form {
         flex: 1 2 30%;
         display: flex;
@@ -30,31 +33,37 @@
     font-size: 14px;
     line-height: 1.5;
     color: $white;
+
     &__block {
         display: flex;
         align-items: center;
         padding: 5px;
     }
+
     &__icons {
         height: 100%;
         font-size: 1.3rem;
         cursor: default;
     }
+
     &__content {
         padding: 2px 5px;
         line-height: normal;
     }
+
     &__link {
         padding: 4px 8px;
         color: $red rgba($white, .8);
         line-height: normal;
         border-radius: 2px;
         @include transition(.2s);
+
         &:hover {
             color: $red;
             background-color: $white;
             @include MDShadow-1;
         }
+
         &:active {
             @include MDShadow-2;
         }
@@ -63,11 +72,12 @@
 
 .map {
     flex: 1 2 60%;
+
     &__title {
         display: block;
-        width: 50%;
+        width: 100%;
         margin: auto;
-        padding: 8px 8px;
+        padding: 8px;
         text-align: center;
         color: $red rgba($white, 0.8);
         line-height: normal;
@@ -75,12 +85,13 @@
         @include MDShadow-1;
         border-radius: 2px;
         @include transition(.2s);
+
         &:hover {
             color: $red $white;
         }
+
         &:active {
             @include MDShadow-2;
         }
     }
-    &__content {}
 }

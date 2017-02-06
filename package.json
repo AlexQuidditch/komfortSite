@@ -8,7 +8,10 @@
         "prepush"
     ],
     "scripts": {
-        "postinstall": ["bower install" , "gulp"]
+        "postinstall": [
+            "bower install",
+            "gulp"
+        ]
     },
     "dependencies": {
         "autoprefixer": "latest",

@@ -7,12 +7,10 @@
     <title>Kentatsu Furst || Комфорт 124</title>
     <meta name="description" content="На этой странице представлены твёрдотопливные котлы семейства Kentatsu, которые можно приобрести в ООО Комфорт в г. Ачинске">
     <meta name="keywords" content="Kentatsu, Kentatsu Furst Elegant, Kentatsu Furst Vulkan Max PR (PE), Kentatsu Furst Vulkan PR (PE), Kentatsu Furst Vulkan SR, кентатсу элегант, кентатсу вулкан, купить, котёл в Ачинске, твёрдотопливные котлы,"> {{> headTags.html }}
+    {{> headTags.html }}
 
-    <!--build:css css/index.min.css-->
-    {{> headTags.css }}
-
-    <link rel="stylesheet" href="css/kentatsu.css">
-    <!--endbuild-->
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/kentatsu.css" />
 
 </head>
 
@@ -55,17 +53,18 @@
 
         </main>
 
-        {{> footer }} {{> topMenu }}
+        {{> footer }}
+
+        {{> topMenu }}
 
     </div>
 
-    {{> buttonUp }} {{> preloader }}
+    {{> buttonUp }}
 
-    <!--build:js js/index.min.js-->
+    {{> preloader }}
+
     {{> bodyTags.js }}
-
     <script type="text/javascript" src="js/kentatsu.js"></script>
-    <!--endbuild-->
 
 </body>
 
