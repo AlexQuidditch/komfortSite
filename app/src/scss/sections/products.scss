@@ -23,6 +23,11 @@ $border-color: #dbdbdb;
             @include MDShadow-2;
         }
     }
+    &__column-half {
+        display: flex;
+        flex-flow: column nowrap;
+        width: 50%
+    }
     &__name {
         display: block;
         text-align: center;
