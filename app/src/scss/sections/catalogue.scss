@@ -48,6 +48,9 @@ $img-height: 35%;
         flex-flow: row nowrap;
         size: 480px auto;
         padding: 20px 0;
+		&:last-child {
+			max-width: 50%;
+		}
     }
 
     &_widest {
@@ -103,12 +106,12 @@ $img-height: 35%;
 
         &_wide {
             @extend .cell__description;
-            flex: 1 1 60%;
+            flex: 1 1 auto;
         }
 
         &_widest {
             @extend .cell__description;
-            flex: 1 1 40%;
+            flex: 1 1 auto;
         }
     }
 

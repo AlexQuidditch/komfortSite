@@ -5,17 +5,3 @@
 
 @import 'layout/intro';
 @import 'sections/products';
-
-tr,
-td {
-    padding: 5px;
-    color: $blacked;
-    font-size: 11.0pt;
-    font-weight: 400;
-    font-style: normal;
-    text-decoration: none;
-    font-family: Calibri, sans-serif;
-    text-align: center;
-    vertical-align: middle;
-    border: .5pt solid $blacked;
-}
